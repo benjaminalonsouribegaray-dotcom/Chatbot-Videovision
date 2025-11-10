@@ -13,7 +13,7 @@ app = FastAPI()
 
 # Cargar Excel
 df = pd.read_excel(
-    r"C:\Users\BENJA\Desktop\ChatBot\resultado_final.xlsx"
+    "resultado_final.xlsx"
 )
 
 # Limpiar nombres de columnas
