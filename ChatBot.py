@@ -8,14 +8,14 @@ from fastapi import FastAPI
 import pandas as pd
 import re
 from rapidfuzz import fuzz
+import os
 
 app = FastAPI()
 
-# Cargar Excel
-df = pd.read_excel(
-    "resultado_final.xlsx"
-)
-
+# Cargar Excel (ruta relativa)
+excel_path = os.path.join(os.path.dirname(__file__), "resultado_final.xlsx")
+df = pd.read_excel(excel_path)
+    
 # Limpiar nombres de columnas
 df.columns = df.columns.str.strip()
 
